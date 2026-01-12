@@ -1,0 +1,9 @@
+{
+  "mode": "recomputed",
+  "pca_out_dir": "factor/ae_out_20251219\\pca_benchmark_recomputed",
+  "loadings_path": "factor/ae_out_20251219\\pca_benchmark_recomputed\\pca_loadings_20251219.csv",
+  "scores_path": "factor/ae_out_20251219\\pca_benchmark_recomputed\\pca_scores_20251219.csv",
+  "summary_path": "factor/ae_out_20251219\\pca_benchmark_recomputed\\pca_summary_20251219.csv",
+  "scree_path": "factor/ae_out_20251219\\pca_benchmark_recomputed\\pca_scree_20251219.png",
+  "k": 8
+}

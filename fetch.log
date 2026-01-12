@@ -1,0 +1,259 @@
+nohup: ignoring input
+>>> 获取股票池
+>>> 使用有效交易日: 20260107
+>>> 股票总数: 5470
+>>> 已存在: 0
+>>> 待爬取: 5470
+>>> 使用【全量财务因子】模式
+[SCHEMA] financials schema set by infer_all_fin_cols (n_cols=108)
+>>> financial columns: 108
+>>> HDF5 schema summary:
+
+[financials] n_cols=108
+  cols: ['ts_code', 'ann_date', 'end_date', 'eps', 'dt_eps', '...', 'tr_yoy', 'or_yoy', 'q_sales_yoy', 'q_op_qoq', 'equity_yoy']
+
+[daily_basic] n_cols=14
+  cols: ['ts_code', 'trade_date', 'close', 'turnover_rate', 'volume_ratio', '...', 'ps_ttm', 'dv_ratio', 'dv_ttm', 'total_mv', 'float_mv']
+
+[completed] n_cols=1
+  cols: ['ts_code']
+[INFO] fetching daily_basic for whole market
+>>> 获取财务因子（流式写入）
+[INFO] fina_indicator batch 0 - 30
+[INFO] fina_indicator batch 30 - 60
+[INFO] fina_indicator batch 60 - 90
+[INFO] fina_indicator batch 90 - 120
+[INFO] fina_indicator batch 120 - 150
+[INFO] fina_indicator batch 150 - 180
+[INFO] fina_indicator batch 180 - 210
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 61.0s due to rate limit
+[INFO] fina_indicator batch 210 - 240
+[INFO] fina_indicator batch 240 - 270
+[INFO] fina_indicator batch 270 - 300
+[INFO] fina_indicator batch 300 - 330
+[INFO] fina_indicator batch 330 - 360
+[INFO] fina_indicator batch 360 - 390
+[INFO] fina_indicator batch 390 - 420
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.1s due to rate limit
+[INFO] fina_indicator batch 420 - 450
+[INFO] fina_indicator batch 450 - 480
+[INFO] fina_indicator batch 480 - 510
+[INFO] fina_indicator batch 510 - 540
+[INFO] fina_indicator batch 540 - 570
+[INFO] fina_indicator batch 570 - 600
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 63.5s due to rate limit
+[INFO] fina_indicator batch 600 - 630
+[INFO] fina_indicator batch 630 - 660
+[INFO] fina_indicator batch 660 - 690
+[INFO] fina_indicator batch 690 - 720
+[INFO] fina_indicator batch 720 - 750
+[INFO] fina_indicator batch 750 - 780
+[INFO] fina_indicator batch 780 - 810
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 64.7s due to rate limit
+[INFO] fina_indicator batch 810 - 840
+[INFO] fina_indicator batch 840 - 870
+[INFO] fina_indicator batch 870 - 900
+[INFO] fina_indicator batch 900 - 930
+[INFO] fina_indicator batch 930 - 960
+[INFO] fina_indicator batch 960 - 990
+[INFO] fina_indicator batch 990 - 1020
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.3s due to rate limit
+[INFO] fina_indicator batch 1020 - 1050
+[INFO] fina_indicator batch 1050 - 1080
+[INFO] fina_indicator batch 1080 - 1110
+[INFO] fina_indicator batch 1110 - 1140
+[INFO] fina_indicator batch 1140 - 1170
+[INFO] fina_indicator batch 1170 - 1200
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 64.5s due to rate limit
+[INFO] fina_indicator batch 1200 - 1230
+[INFO] fina_indicator batch 1230 - 1260
+[INFO] fina_indicator batch 1260 - 1290
+[INFO] fina_indicator batch 1290 - 1320
+[INFO] fina_indicator batch 1320 - 1350
+[INFO] fina_indicator batch 1350 - 1380
+[INFO] fina_indicator batch 1380 - 1410
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 60.8s due to rate limit
+[INFO] fina_indicator batch 1410 - 1440
+[INFO] fina_indicator batch 1440 - 1470
+[INFO] fina_indicator batch 1470 - 1500
+[INFO] fina_indicator batch 1500 - 1530
+[INFO] fina_indicator batch 1530 - 1560
+[INFO] fina_indicator batch 1560 - 1590
+[INFO] fina_indicator batch 1590 - 1620
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 61.0s due to rate limit
+[INFO] fina_indicator batch 1620 - 1650
+[INFO] fina_indicator batch 1650 - 1680
+[INFO] fina_indicator batch 1680 - 1710
+[INFO] fina_indicator batch 1710 - 1740
+[INFO] fina_indicator batch 1740 - 1770
+[INFO] fina_indicator batch 1770 - 1800
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.3s due to rate limit
+[INFO] fina_indicator batch 1800 - 1830
+[INFO] fina_indicator batch 1830 - 1860
+[INFO] fina_indicator batch 1860 - 1890
+[INFO] fina_indicator batch 1890 - 1920
+[INFO] fina_indicator batch 1920 - 1950
+[INFO] fina_indicator batch 1950 - 1980
+[INFO] fina_indicator batch 1980 - 2010
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 64.7s due to rate limit
+[INFO] fina_indicator batch 2010 - 2040
+[INFO] fina_indicator batch 2040 - 2070
+[INFO] fina_indicator batch 2070 - 2100
+[INFO] fina_indicator batch 2100 - 2130
+[INFO] fina_indicator batch 2130 - 2160
+[INFO] fina_indicator batch 2160 - 2190
+[INFO] fina_indicator batch 2190 - 2220
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 61.9s due to rate limit
+[INFO] fina_indicator batch 2220 - 2250
+[INFO] fina_indicator batch 2250 - 2280
+[INFO] fina_indicator batch 2280 - 2310
+[INFO] fina_indicator batch 2310 - 2340
+[INFO] fina_indicator batch 2340 - 2370
+[INFO] fina_indicator batch 2370 - 2400
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 63.1s due to rate limit
+[INFO] fina_indicator batch 2400 - 2430
+[INFO] fina_indicator batch 2430 - 2460
+[INFO] fina_indicator batch 2460 - 2490
+[INFO] fina_indicator batch 2490 - 2520
+[INFO] fina_indicator batch 2520 - 2550
+[INFO] fina_indicator batch 2550 - 2580
+[INFO] fina_indicator batch 2580 - 2610
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.5s due to rate limit
+[INFO] fina_indicator batch 2610 - 2640
+[INFO] fina_indicator batch 2640 - 2670
+[INFO] fina_indicator batch 2670 - 2700
+[INFO] fina_indicator batch 2700 - 2730
+[INFO] fina_indicator batch 2730 - 2760
+[INFO] fina_indicator batch 2760 - 2790
+[INFO] fina_indicator batch 2790 - 2820
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 61.9s due to rate limit
+[INFO] fina_indicator batch 2820 - 2850
+[INFO] fina_indicator batch 2850 - 2880
+[INFO] fina_indicator batch 2880 - 2910
+[INFO] fina_indicator batch 2910 - 2940
+[INFO] fina_indicator batch 2940 - 2970
+[INFO] fina_indicator batch 2970 - 3000
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 63.8s due to rate limit
+[INFO] fina_indicator batch 3000 - 3030
+[INFO] fina_indicator batch 3030 - 3060
+[INFO] fina_indicator batch 3060 - 3090
+[INFO] fina_indicator batch 3090 - 3120
+[INFO] fina_indicator batch 3120 - 3150
+[INFO] fina_indicator batch 3150 - 3180
+[INFO] fina_indicator batch 3180 - 3210
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.3s due to rate limit
+[INFO] fina_indicator batch 3210 - 3240
+[INFO] fina_indicator batch 3240 - 3270
+[INFO] fina_indicator batch 3270 - 3300
+[INFO] fina_indicator batch 3300 - 3330
+[INFO] fina_indicator batch 3330 - 3360
+[INFO] fina_indicator batch 3360 - 3390
+[INFO] fina_indicator batch 3390 - 3420
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 64.8s due to rate limit
+[INFO] fina_indicator batch 3420 - 3450
+[INFO] fina_indicator batch 3450 - 3480
+[INFO] fina_indicator batch 3480 - 3510
+[INFO] fina_indicator batch 3510 - 3540
+[INFO] fina_indicator batch 3540 - 3570
+[INFO] fina_indicator batch 3570 - 3600
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.7s due to rate limit
+[INFO] fina_indicator batch 3600 - 3630
+[INFO] fina_indicator batch 3630 - 3660
+[INFO] fina_indicator batch 3660 - 3690
+[INFO] fina_indicator batch 3690 - 3720
+[INFO] fina_indicator batch 3720 - 3750
+[INFO] fina_indicator batch 3750 - 3780
+[INFO] fina_indicator batch 3780 - 3810
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 63.6s due to rate limit
+[INFO] fina_indicator batch 3810 - 3840
+[INFO] fina_indicator batch 3840 - 3870
+[INFO] fina_indicator batch 3870 - 3900
+[INFO] fina_indicator batch 3900 - 3930
+[INFO] fina_indicator batch 3930 - 3960
+[INFO] fina_indicator batch 3960 - 3990
+[INFO] fina_indicator batch 3990 - 4020
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 64.7s due to rate limit
+[INFO] fina_indicator batch 4020 - 4050
+[INFO] fina_indicator batch 4050 - 4080
+[INFO] fina_indicator batch 4080 - 4110
+[INFO] fina_indicator batch 4110 - 4140
+[INFO] fina_indicator batch 4140 - 4170
+[INFO] fina_indicator batch 4170 - 4200
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 60.3s due to rate limit
+[INFO] fina_indicator batch 4200 - 4230
+[INFO] fina_indicator batch 4230 - 4260
+[INFO] fina_indicator batch 4260 - 4290
+[INFO] fina_indicator batch 4290 - 4320
+[INFO] fina_indicator batch 4320 - 4350
+[INFO] fina_indicator batch 4350 - 4380
+[INFO] fina_indicator batch 4380 - 4410
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 61.7s due to rate limit
+[INFO] fina_indicator batch 4410 - 4440
+[INFO] fina_indicator batch 4440 - 4470
+[INFO] fina_indicator batch 4470 - 4500
+[INFO] fina_indicator batch 4500 - 4530
+[INFO] fina_indicator batch 4530 - 4560
+[INFO] fina_indicator batch 4560 - 4590
+[INFO] fina_indicator batch 4590 - 4620
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.4s due to rate limit
+[INFO] fina_indicator batch 4620 - 4650
+[INFO] fina_indicator batch 4650 - 4680
+[INFO] fina_indicator batch 4680 - 4710
+[INFO] fina_indicator batch 4710 - 4740
+[INFO] fina_indicator batch 4740 - 4770
+[INFO] fina_indicator batch 4770 - 4800
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 63.6s due to rate limit
+[INFO] fina_indicator batch 4800 - 4830
+[INFO] fina_indicator batch 4830 - 4860
+[INFO] fina_indicator batch 4860 - 4890
+[INFO] fina_indicator batch 4890 - 4920
+[INFO] fina_indicator batch 4920 - 4950
+[INFO] fina_indicator batch 4950 - 4980
+[INFO] fina_indicator batch 4980 - 5010
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 63.1s due to rate limit
+[INFO] fina_indicator batch 5010 - 5040
+[INFO] fina_indicator batch 5040 - 5070
+[INFO] fina_indicator batch 5070 - 5100
+[INFO] fina_indicator batch 5100 - 5130
+[INFO] fina_indicator batch 5130 - 5160
+[INFO] fina_indicator batch 5160 - 5190
+[INFO] fina_indicator batch 5190 - 5220
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 62.7s due to rate limit
+[INFO] fina_indicator batch 5220 - 5250
+[INFO] fina_indicator batch 5250 - 5280
+[INFO] fina_indicator batch 5280 - 5310
+[INFO] fina_indicator batch 5310 - 5340
+[INFO] fina_indicator batch 5340 - 5370
+[INFO] fina_indicator batch 5370 - 5400
+[WARN] tushare error: 抱歉，您每分钟最多访问该接口200次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。, attempt=1
+[INFO] sleeping 64.6s due to rate limit
+[INFO] fina_indicator batch 5400 - 5430
+[INFO] fina_indicator batch 5430 - 5460
+[INFO] fina_indicator batch 5460 - 5470
+>>> 本批次完成

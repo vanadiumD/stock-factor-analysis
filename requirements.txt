@@ -1,0 +1,8 @@
+matplotlib==3.10.8
+numpy==2.4.1
+pandas==2.3.3
+python-dotenv==1.2.1
+scikit_learn==1.8.0
+torch==2.7.1+cu118
+tushare==1.4.24
+umap_learn==0.5.9.post2

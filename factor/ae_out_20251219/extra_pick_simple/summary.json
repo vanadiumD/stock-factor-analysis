@@ -1,0 +1,16 @@
+{
+  "out_dir": "factor/ae_out_20251219",
+  "latent": "factor/ae_out_20251219\\ae_latent.csv",
+  "clusters": "factor/ae_out_20251219\\clusters_AE_kmeans_k8.csv",
+  "rep_n": 10,
+  "extreme_n": 10,
+  "n_stocks": 5393,
+  "z_dim": 8,
+  "n_clusters": 8,
+  "outputs": {
+    "cluster_reps": "picks_cluster_representatives_n10.csv",
+    "latent_extremes": "picks_latent_extremes_n10.csv",
+    "merged": "picks_all.csv",
+    "plot": "plot_latent2_highlight_all.png"
+  }
+}

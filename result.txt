@@ -1,0 +1,595 @@
+ E:\Python\project\quants> python .\factor\preanalysis.py --date 20251219
+>>> [stage:filter] input=A/stock_factors_20251219.h5 -> output=factor/purified.h5 (mode=loose)
+>>> loading /daily_basic
+    original: 5448 stocks, 5448 rows
+>>> applying LOOSE stock filter
+>>> after LOOSE filter: 5393 stocks
+    after filter: 5393 stocks, 5393 rows
+>>> loading /financials
+    original: 5461 stocks, 5461 rows
+    after filter: 5393 stocks, 5393 rows
+>>> updating /completed
+    writing 5393 stocks to /completed
+shape:(5393, 108)
+columns: 
+Index(['ts_code', 'ann_date', 'end_date', 'eps', 'dt_eps', 'total_revenue_ps',
+       'revenue_ps', 'capital_rese_ps', 'surplus_rese_ps', 'undist_profit_ps',
+       ...
+       'ocf_yoy', 'roe_yoy', 'bps_yoy', 'assets_yoy', 'eqt_yoy', 'tr_yoy',
+       'or_yoy', 'q_sales_yoy', 'q_op_qoq', 'equity_yoy'],
+      dtype='object', length=108)
+dtypes:
+ts_code         object
+ann_date         int64
+end_date        object
+eps            float64
+dt_eps         float64
+                ...
+tr_yoy         float64
+or_yoy         float64
+q_sales_yoy    float64
+q_op_qoq       float64
+equity_yoy     float64
+Length: 108, dtype: object
+                          valid_ratio  nan_ratio  zero_ratio  ...  unique_count          mean           std
+factor                                                        ...
+ebitda                       0.002596   0.997404    0.000000  ...            14  2.671307e+08  5.643821e+08   
+tangibleasset_to_netdebt     0.484332   0.515668    0.000000  ...          2581  1.015699e+01  6.506918e+01   
+impai_ttm                    0.860004   0.139996    0.010134  ...          3945 -1.077117e+00  5.208537e+00   
+eqt_to_interestdebt          0.954200   0.045800    0.000000  ...          5036  4.884205e+02  1.916909e+04   
+tangasset_to_intdebt         0.954200   0.045800    0.000000  ...          5073  4.341517e+02  1.623755e+04   
+...                               ...        ...         ...  ...           ...           ...           ...   
+eqt_to_debt                  1.000000   0.000000    0.000000  ...          5097  2.621870e+00  3.722742e+00   
+ocf_to_debt                  1.000000   0.000000    0.000371  ...          3635  8.989596e-02  3.729861e-01   
+roa_yearly                   1.000000   0.000000    0.000000  ...          5270  2.695080e+00  6.060313e+00   
+eqt_yoy                      1.000000   0.000000    0.000000  ...          5327  1.009574e+02  7.260409e+03   
+assets_yoy                   1.000000   0.000000    0.000000  ...          5344  6.367935e+00  1.099344e+02   
+
+[105 rows x 7 columns]
+>>> saved factor\factor_histograms_20251219_p1.png
+>>> saved factor\factor_histograms_20251219_p2.png
+>>> saved factor\factor_histograms_20251219_p3.png
+>>> saved factor\factor_histograms_20251219_p4.png
+>>> saved factor\factor_histograms_20251219_p5.png
+>>> saved factor\factor_histograms_20251219_p6.png
+>>> saved factor\factor_histograms_20251219_p7.png
+
+>>> invalid factors (valid_ratio lowest; drop-candidates are valid_ratio==0):
+                          valid_ratio  zero_ratio  unique_count          mean           std
+factor
+ebitda                       0.002596    0.000000            14  2.671307e+08  5.643821e+08
+tangibleasset_to_netdebt     0.484332    0.000000          2581  1.015699e+01  6.506918e+01
+impai_ttm                    0.860004    0.010134          3945 -1.077117e+00  5.208537e+00
+eqt_to_interestdebt          0.954200    0.000000          5036  4.884205e+02  1.916909e+04
+tangasset_to_intdebt         0.954200    0.000000          5073  4.341517e+02  1.623755e+04
+q_saleexp_to_gr              0.969034    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr                0.969219    0.000574          5125  7.430413e+00  1.046724e+01
+ar_turn                      0.979232    0.000000          5141  1.216008e+02  5.950651e+03
+noncurrent_exint             0.979603    0.011925          5221  7.044914e+08  5.191377e+09
+longdeb_to_debt              0.979603    0.000379          5247  2.150501e+01  1.859995e+01
+dt_eps_yoy                   0.980901    0.023251          3968  2.255387e+00  7.587895e+02
+turn_days                    0.981087    0.000000          5289  3.946895e+02  2.746107e+03
+finaexp_of_gr                0.981087    0.000000          5000  1.440213e+00  1.442244e+01
+cogs_of_sales                0.981087    0.000000          5269  7.237346e+01  1.906135e+01
+grossprofit_margin           0.981087    0.000000          5269  2.762654e+01  1.906135e+01
+gross_margin                 0.981087    0.000000          5291  1.559438e+09  1.026536e+10
+q_gc_to_gr                   0.981087    0.000000          5252  1.088521e+02  3.102041e+02
+roe_yoy                      0.981087    0.000000          5286  1.853909e+00  2.350217e+03
+eqt_to_talcapital            0.981272    0.000000          5171  7.342353e+01  2.624086e+01
+expense_of_sales             0.981272    0.000000          5264  4.568447e+01  1.233914e+03
+
+>>> zero-heavy factors (zero_ratio highest):
+                  valid_ratio  zero_ratio  unique_count          mean           std
+factor
+int_to_talcap        0.981272    0.028156          5097  2.358592e+01  2.484897e+01
+interestdebt         0.981828    0.028140          5142  5.640302e+09  3.317679e+10
+dt_eps_yoy           0.980901    0.023251          3968  2.255387e+00  7.587895e+02
+basic_eps_yoy        0.998146    0.023035          4025  2.530097e+00  7.504637e+02
+noncurrent_exint     0.979603    0.011925          5221  7.044914e+08  5.191377e+09
+impai_ttm            0.860004    0.010134          3945 -1.077117e+00  5.208537e+00
+dt_eps               0.982755    0.002453          2418  3.596212e-01  1.093064e+00
+eps                  0.999629    0.002226          2440  3.628910e-01  1.117141e+00
+q_saleexp_to_gr      0.969034    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr        0.969219    0.000574          5125  7.430413e+00  1.046724e+01
+surplus_rese_ps      0.984239    0.000565          3519  3.477648e-01  6.598162e-01
+longdeb_to_debt      0.979603    0.000379          5247  2.150501e+01  1.859995e+01
+ocf_to_shortdebt     0.981643    0.000378          3898  1.285075e-01  4.521845e-01
+cfps_yoy             0.987020    0.000376          5316 -1.755541e+00  5.799039e+03
+bps_yoy              0.999815    0.000371          5317  1.161639e+01  9.294837e+02
+ocfps                0.999815    0.000371          4751  4.115635e-01  1.887678e+00
+ocf_to_debt          1.000000    0.000371          3635  8.989596e-02  3.729861e-01
+capital_rese_ps      0.997219    0.000186          5154  3.656324e+00  4.444537e+00
+cfps                 0.999815    0.000185          4655 -1.547570e-01  1.414805e+00
+
+>>> [hist prune] lowest valid_ratio (highest missing):
+                          valid_ratio  nan_ratio  zero_all_ratio  zero_ratio  unique_count          mean           std
+factor                                                                                                        
+
+ebitda                       0.002596   0.997404        0.000000    0.000000            14  2.671307e+08  5.643821e+08
+tangibleasset_to_netdebt     0.484332   0.515668        0.000000    0.000000          2581  1.015699e+01  6.506918e+01
+impai_ttm                    0.860004   0.139996        0.008715    0.010134          3945 -1.077117e+00  5.208537e+00
+eqt_to_interestdebt          0.954200   0.045800        0.000000    0.000000          5036  4.884205e+02  1.916909e+04
+tangasset_to_intdebt         0.954200   0.045800        0.000000    0.000000          5073  4.341517e+02  1.623755e+04
+q_saleexp_to_gr              0.969034   0.030966        0.000927    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr                0.969219   0.030781        0.000556    0.000574          5125  7.430413e+00  1.046724e+01
+ar_turn                      0.979232   0.020768        0.000000    0.000000          5141  1.216008e+02  5.950651e+03
+noncurrent_exint             0.979603   0.020397        0.011682    0.011925          5221  7.044914e+08  5.191377e+09
+longdeb_to_debt              0.979603   0.020397        0.000371    0.000379          5247  2.150501e+01  1.859995e+01
+dt_eps_yoy                   0.980901   0.019099        0.022807    0.023251          3968  2.255387e+00  7.587895e+02
+turn_days                    0.981087   0.018913        0.000000    0.000000          5289  3.946895e+02  2.746107e+03
+finaexp_of_gr                0.981087   0.018913        0.000000    0.000000          5000  1.440213e+00  1.442244e+01
+cogs_of_sales                0.981087   0.018913        0.000000    0.000000          5269  7.237346e+01  1.906135e+01
+grossprofit_margin           0.981087   0.018913        0.000000    0.000000          5269  2.762654e+01  1.906135e+01
+gross_margin                 0.981087   0.018913        0.000000    0.000000          5291  1.559438e+09  1.026536e+10
+q_gc_to_gr                   0.981087   0.018913        0.000000    0.000000          5252  1.088521e+02  3.102041e+02
+roe_yoy                      0.981087   0.018913        0.000000    0.000000          5286  1.853909e+00  2.350217e+03
+eqt_to_talcapital            0.981272   0.018728        0.000000    0.000000          5171  7.342353e+01  2.624086e+01
+expense_of_sales             0.981272   0.018728        0.000000    0.000000          5264  4.568447e+01  1.233914e+03
+
+>>> [hist prune] highest zero_all_ratio:
+                  valid_ratio  nan_ratio  zero_all_ratio  zero_ratio  unique_count          mean           std
+factor
+int_to_talcap        0.981272   0.018728        0.027628    0.028156          5097  2.358592e+01  2.484897e+01
+interestdebt         0.981828   0.018172        0.027628    0.028140          5142  5.640302e+09  3.317679e+10
+basic_eps_yoy        0.998146   0.001854        0.022993    0.023035          4025  2.530097e+00  7.504637e+02
+dt_eps_yoy           0.980901   0.019099        0.022807    0.023251          3968  2.255387e+00  7.587895e+02
+noncurrent_exint     0.979603   0.020397        0.011682    0.011925          5221  7.044914e+08  5.191377e+09
+impai_ttm            0.860004   0.139996        0.008715    0.010134          3945 -1.077117e+00  5.208537e+00
+dt_eps               0.982755   0.017245        0.002411    0.002453          2418  3.596212e-01  1.093064e+00
+eps                  0.999629   0.000371        0.002225    0.002226          2440  3.628910e-01  1.117141e+00
+q_saleexp_to_gr      0.969034   0.030966        0.000927    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr        0.969219   0.030781        0.000556    0.000574          5125  7.430413e+00  1.046724e+01
+surplus_rese_ps      0.984239   0.015761        0.000556    0.000565          3519  3.477648e-01  6.598162e-01
+cfps_yoy             0.987020   0.012980        0.000371    0.000376          5316 -1.755541e+00  5.799039e+03
+bps_yoy              0.999815   0.000185        0.000371    0.000371          5317  1.161639e+01  9.294837e+02
+ocf_to_debt          1.000000   0.000000        0.000371    0.000371          3635  8.989596e-02  3.729861e-01
+longdeb_to_debt      0.979603   0.020397        0.000371    0.000379          5247  2.150501e+01  1.859995e+01
+ocf_to_shortdebt     0.981643   0.018357        0.000371    0.000378          3898  1.285075e-01  4.521845e-01
+ocfps                0.999815   0.000185        0.000371    0.000371          4751  4.115635e-01  1.887678e+00
+capital_rese_ps      0.997219   0.002781        0.000185    0.000186          5154  3.656324e+00  4.444537e+00
+cfps                 0.999815   0.000185        0.000185    0.000185          4655 -1.547570e-01  1.414805e+00
+ar_turn              0.979232   0.020768        0.000000    0.000000          5141  1.216008e+02  5.950651e+03
+
+Enter factor ids/names to drop, or commands: null=5, zero=5, nan>=0.8, valid<=0.2, zeroall>=0.5, zerovalid>=0.8; q to quit
+Examples: null=10, zeroall>=0.6, 3, roe
+nan>=0.5,zerovalid>=0.5
+>>> threshold drop nan_ratio >= 0.5: n=2
+>>> threshold drop zero_ratio (among valid) >= 0.5: n=0
+>>> dropping:
+    tangibleasset_to_netdebt
+    ebitda
+
+>>> [hist prune] lowest valid_ratio (highest missing):
+                      valid_ratio  nan_ratio  zero_all_ratio  zero_ratio  unique_count          mean           std
+factor                                                                                                        
+
+impai_ttm                0.860004   0.139996        0.008715    0.010134          3945 -1.077117e+00  5.208537e+00
+eqt_to_interestdebt      0.954200   0.045800        0.000000    0.000000          5036  4.884205e+02  1.916909e+04
+tangasset_to_intdebt     0.954200   0.045800        0.000000    0.000000          5073  4.341517e+02  1.623755e+04
+q_saleexp_to_gr          0.969034   0.030966        0.000927    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr            0.969219   0.030781        0.000556    0.000574          5125  7.430413e+00  1.046724e+01
+ar_turn                  0.979232   0.020768        0.000000    0.000000          5141  1.216008e+02  5.950651e+03
+longdeb_to_debt          0.979603   0.020397        0.000371    0.000379          5247  2.150501e+01  1.859995e+01
+noncurrent_exint         0.979603   0.020397        0.011682    0.011925          5221  7.044914e+08  5.191377e+09
+dt_eps_yoy               0.980901   0.019099        0.022807    0.023251          3968  2.255387e+00  7.587895e+02
+turn_days                0.981087   0.018913        0.000000    0.000000          5289  3.946895e+02  2.746107e+03
+q_gc_to_gr               0.981087   0.018913        0.000000    0.000000          5252  1.088521e+02  3.102041e+02
+roe_yoy                  0.981087   0.018913        0.000000    0.000000          5286  1.853909e+00  2.350217e+03
+finaexp_of_gr            0.981087   0.018913        0.000000    0.000000          5000  1.440213e+00  1.442244e+01
+grossprofit_margin       0.981087   0.018913        0.000000    0.000000          5269  2.762654e+01  1.906135e+01
+gross_margin             0.981087   0.018913        0.000000    0.000000          5291  1.559438e+09  1.026536e+10
+cogs_of_sales            0.981087   0.018913        0.000000    0.000000          5269  7.237346e+01  1.906135e+01
+expense_of_sales         0.981272   0.018728        0.000000    0.000000          5264  4.568447e+01  1.233914e+03
+eqt_to_talcapital        0.981272   0.018728        0.000000    0.000000          5171  7.342353e+01  2.624086e+01
+int_to_talcap            0.981272   0.018728        0.027628    0.028156          5097  2.358592e+01  2.484897e+01
+gc_of_gr                 0.981457   0.018543        0.000000    0.000000          5252  1.038694e+02  2.751071e+02
+
+>>> [hist prune] highest zero_all_ratio:
+                  valid_ratio  nan_ratio  zero_all_ratio  zero_ratio  unique_count          mean           std
+factor
+int_to_talcap        0.981272   0.018728        0.027628    0.028156          5097  2.358592e+01  2.484897e+01
+interestdebt         0.981828   0.018172        0.027628    0.028140          5142  5.640302e+09  3.317679e+10
+basic_eps_yoy        0.998146   0.001854        0.022993    0.023035          4025  2.530097e+00  7.504637e+02
+dt_eps_yoy           0.980901   0.019099        0.022807    0.023251          3968  2.255387e+00  7.587895e+02
+noncurrent_exint     0.979603   0.020397        0.011682    0.011925          5221  7.044914e+08  5.191377e+09
+impai_ttm            0.860004   0.139996        0.008715    0.010134          3945 -1.077117e+00  5.208537e+00
+dt_eps               0.982755   0.017245        0.002411    0.002453          2418  3.596212e-01  1.093064e+00
+eps                  0.999629   0.000371        0.002225    0.002226          2440  3.628910e-01  1.117141e+00
+q_saleexp_to_gr      0.969034   0.030966        0.000927    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr        0.969219   0.030781        0.000556    0.000574          5125  7.430413e+00  1.046724e+01
+surplus_rese_ps      0.984239   0.015761        0.000556    0.000565          3519  3.477648e-01  6.598162e-01
+ocf_to_shortdebt     0.981643   0.018357        0.000371    0.000378          3898  1.285075e-01  4.521845e-01
+bps_yoy              0.999815   0.000185        0.000371    0.000371          5317  1.161639e+01  9.294837e+02
+cfps_yoy             0.987020   0.012980        0.000371    0.000376          5316 -1.755541e+00  5.799039e+03
+ocf_to_debt          1.000000   0.000000        0.000371    0.000371          3635  8.989596e-02  3.729861e-01
+ocfps                0.999815   0.000185        0.000371    0.000371          4751  4.115635e-01  1.887678e+00
+longdeb_to_debt      0.979603   0.020397        0.000371    0.000379          5247  2.150501e+01  1.859995e+01
+cfps                 0.999815   0.000185        0.000185    0.000185          4655 -1.547570e-01  1.414805e+00
+capital_rese_ps      0.997219   0.002781        0.000185    0.000186          5154  3.656324e+00  4.444537e+00
+roe_yoy              0.981087   0.018913        0.000000    0.000000          5286  1.853909e+00  2.350217e+03
+
+Enter factor ids/names to drop, or commands: null=5, zero=5, nan>=0.8, valid<=0.2, zeroall>=0.5, zerovalid>=0.8; q to quit
+Examples: null=10, zeroall>=0.6, 3, roe
+impai_ttm
+>>> dropping:
+    impai_ttm
+
+>>> [hist prune] lowest valid_ratio (highest missing):
+                      valid_ratio  nan_ratio  zero_all_ratio  zero_ratio  unique_count          mean          
+ std
+factor                                                                                                        
+
+tangasset_to_intdebt     0.954200   0.045800        0.000000    0.000000          5073  4.341517e+02  1.623755e+04
+eqt_to_interestdebt      0.954200   0.045800        0.000000    0.000000          5036  4.884205e+02  1.916909e+04
+q_saleexp_to_gr          0.969034   0.030966        0.000927    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr            0.969219   0.030781        0.000556    0.000574          5125  7.430413e+00  1.046724e+01
+ar_turn                  0.979232   0.020768        0.000000    0.000000          5141  1.216008e+02  5.950651e+03
+longdeb_to_debt          0.979603   0.020397        0.000371    0.000379          5247  2.150501e+01  1.859995e+01
+noncurrent_exint         0.979603   0.020397        0.011682    0.011925          5221  7.044914e+08  5.191377e+09
+dt_eps_yoy               0.980901   0.019099        0.022807    0.023251          3968  2.255387e+00  7.587895e+02
+roe_yoy                  0.981087   0.018913        0.000000    0.000000          5286  1.853909e+00  2.350217e+03
+q_gc_to_gr               0.981087   0.018913        0.000000    0.000000          5252  1.088521e+02  3.102041e+02
+turn_days                0.981087   0.018913        0.000000    0.000000          5289  3.946895e+02  2.746107e+03
+gross_margin             0.981087   0.018913        0.000000    0.000000          5291  1.559438e+09  1.026536e+10
+finaexp_of_gr            0.981087   0.018913        0.000000    0.000000          5000  1.440213e+00  1.442244e+01
+cogs_of_sales            0.981087   0.018913        0.000000    0.000000          5269  7.237346e+01  1.906135e+01
+grossprofit_margin       0.981087   0.018913        0.000000    0.000000          5269  2.762654e+01  1.906135e+01
+expense_of_sales         0.981272   0.018728        0.000000    0.000000          5264  4.568447e+01  1.233914e+03
+int_to_talcap            0.981272   0.018728        0.027628    0.028156          5097  2.358592e+01  2.484897e+01
+eqt_to_talcapital        0.981272   0.018728        0.000000    0.000000          5171  7.342353e+01  2.624086e+01
+ca_turn                  0.981457   0.018543        0.000000    0.000000          4464  7.955199e-01  6.767923e-01
+gc_of_gr                 0.981457   0.018543        0.000000    0.000000          5252  1.038694e+02  2.751071e+02
+
+>>> [hist prune] highest zero_all_ratio:
+                  valid_ratio  nan_ratio  zero_all_ratio  zero_ratio  unique_count          mean           std
+factor
+int_to_talcap        0.981272   0.018728        0.027628    0.028156          5097  2.358592e+01  2.484897e+01
+interestdebt         0.981828   0.018172        0.027628    0.028140          5142  5.640302e+09  3.317679e+10
+basic_eps_yoy        0.998146   0.001854        0.022993    0.023035          4025  2.530097e+00  7.504637e+02
+dt_eps_yoy           0.980901   0.019099        0.022807    0.023251          3968  2.255387e+00  7.587895e+02
+noncurrent_exint     0.979603   0.020397        0.011682    0.011925          5221  7.044914e+08  5.191377e+09
+dt_eps               0.982755   0.017245        0.002411    0.002453          2418  3.596212e-01  1.093064e+00
+eps                  0.999629   0.000371        0.002225    0.002226          2440  3.628910e-01  1.117141e+00
+q_saleexp_to_gr      0.969034   0.030966        0.000927    0.000957          5091  7.949438e+00  1.499918e+01
+saleexp_to_gr        0.969219   0.030781        0.000556    0.000574          5125  7.430413e+00  1.046724e+01
+surplus_rese_ps      0.984239   0.015761        0.000556    0.000565          3519  3.477648e-01  6.598162e-01
+ocf_to_shortdebt     0.981643   0.018357        0.000371    0.000378          3898  1.285075e-01  4.521845e-01
+bps_yoy              0.999815   0.000185        0.000371    0.000371          5317  1.161639e+01  9.294837e+02
+cfps_yoy             0.987020   0.012980        0.000371    0.000376          5316 -1.755541e+00  5.799039e+03
+ocf_to_debt          1.000000   0.000000        0.000371    0.000371          3635  8.989596e-02  3.729861e-01
+ocfps                0.999815   0.000185        0.000371    0.000371          4751  4.115635e-01  1.887678e+00
+longdeb_to_debt      0.979603   0.020397        0.000371    0.000379          5247  2.150501e+01  1.859995e+01
+cfps                 0.999815   0.000185        0.000185    0.000185          4655 -1.547570e-01  1.414805e+00
+capital_rese_ps      0.997219   0.002781        0.000185    0.000186          5154  3.656324e+00  4.444537e+00
+turn_days            0.981087   0.018913        0.000000    0.000000          5289  3.946895e+02  2.746107e+03
+ar_turn              0.979232   0.020768        0.000000    0.000000          5141  1.216008e+02  5.950651e+03
+
+Enter factor ids/names to drop, or commands: null=5, zero=5, nan>=0.8, valid<=0.2, zeroall>=0.5, zerovalid>=0.8; q to quit
+Examples: null=10, zeroall>=0.6, 3, roe
+q
+>>> removed 7 histogram pngs:
+    factor_histograms_20251219_p1.png
+    factor_histograms_20251219_p2.png
+    factor_histograms_20251219_p3.png
+    factor_histograms_20251219_p4.png
+    factor_histograms_20251219_p5.png
+    factor_histograms_20251219_p6.png
+    factor_histograms_20251219_p7.png
+>>> saved factor\factor_histograms_20251219_p1.png
+>>> saved factor\factor_histograms_20251219_p2.png
+>>> saved factor\factor_histograms_20251219_p3.png
+>>> saved factor\factor_histograms_20251219_p4.png
+>>> saved factor\factor_histograms_20251219_p5.png
+>>> saved factor\factor_histograms_20251219_p6.png
+>>> saved factor\factor_histograms_20251219_p7.png
+
+>>> connected components (|corr|>=0.6, method=pearson) sorted by size:
+[cc#0] size=16 keep=q_ocf_to_sales score=8.3702
+      top candidates: q_ocf_to_sales(8.370), op_of_gr(8.357), profit_to_op(8.353), profit_to_gr(8.349), netprofit_margin(8.349), adminexp_of_gr(8.346), turn_days(8.232), cogs_of_sales(8.212)
+[cc#1] size=14 keep=op_income score=8.3930
+      top candidates: op_income(8.393), retained_earnings(8.391), fixed_assets(8.391), profit_dedt(8.390), tangible_asset(8.240), ebit(8.240), netdebt(8.240), invest_capital(8.240)
+[cc#2] size=14 keep=roe score=8.2809
+      top candidates: roe(8.281), roe_yearly(8.281), roa_dp(8.271), npta(8.270), roa_yearly(8.270), roe_dt(8.270), q_roe(8.158), roic(8.153)
+[cc#3] size=10 keep=bps score=8.3074
+      top candidates: bps(8.307), retainedps(8.244), undist_profit_ps(8.226), capital_rese_ps(8.145), ocfps(7.750), ebit_ps(7.455), diluted2_eps(7.450), surplus_rese_ps(6.471)
+[cc#4] size=9 keep=debt_to_assets score=8.3840
+      top candidates: debt_to_assets(8.384), tbassets_to_totalassets(8.225), eqt_to_talcapital(8.115), eqt_to_debt(8.097), int_to_talcap(7.999), tangibleasset_to_debt(7.929), current_ratio(7.874), quick_ratio(7.825)     
+[cc#5] size=4 keep=netprofit_yoy score=8.3859
+      top candidates: netprofit_yoy(8.386), roe_yoy(8.229), basic_eps_yoy(6.985), dt_eps_yoy(6.876)
+[cc#6] size=4 keep=assets_yoy score=8.3440
+      top candidates: assets_yoy(8.344), eqt_yoy(8.327), bps_yoy(8.316), equity_yoy(8.268)
+[cc#7] size=3 keep=q_sales_yoy score=8.3665
+      top candidates: q_sales_yoy(8.367), tr_yoy(8.363), or_yoy(8.361)
+[cc#8] size=2 keep=revenue_ps score=8.2313
+      top candidates: revenue_ps(8.231), total_revenue_ps(8.231)
+[cc#9] size=2 keep=ca_turn score=7.4084
+      top candidates: ca_turn(7.408), assets_turn(6.869)
+>>> saved correlation plot (overwrite): factor\correlation.png
+
+Enter factor ids/names to drop, or commands:
+  cc=3       prune top-3 largest connected components (keep 1 best each)
+  cc=all     prune all connected components (keep 1 best each)
+  q          quit
+Examples: cc=2   |   3, netprofit_margin_std_q
+cc=all
+>>> cc-prune triggered: processed 17 components; drop n=75
+>>> dropping:
+    roe_waa
+    tangibleasset_to_debt
+    tbassets_to_totalassets
+    ebit_ps
+    ocf_to_debt
+    surplus_rese_ps
+    roa_dp
+    dp_assets_to_eqt
+    eqt_to_interestdebt
+    saleexp_to_gr
+    gross_margin
+    grossprofit_margin
+    turn_days
+    noncurrent_exint
+    gc_of_gr
+    ebit
+    eqt_to_debt
+    eqt_to_talcapital
+    dt_eps_yoy
+    or_yoy
+    q_saleexp_to_gr
+    roa
+    undist_profit_ps
+    quick_ratio
+    retained_earnings
+    interestdebt
+    basic_eps_yoy
+    roic
+    op_of_gr
+    ebit_of_gr
+    npta
+    fcff
+    invest_capital
+    cogs_of_sales
+    roa_yearly
+    nca_to_assets
+    retainedps
+    longdeb_to_debt
+    tangible_asset
+    netprofit_margin
+    assets_turn
+    profit_dedt
+    tr_yoy
+    cfps_yoy
+    q_gc_to_gr
+    diluted2_eps
+    int_to_talcap
+    expense_of_sales
+    capital_rese_ps
+    current_ratio
+    equity_yoy
+    bps_yoy
+    fcfe_ps
+    roe_yearly
+    profit_to_gr
+    roa2_yearly
+    roe_dt
+    fixed_assets
+    current_exint
+    debt_to_eqt
+    total_revenue_ps
+    fcfe
+    finaexp_of_gr
+    profit_to_op
+    q_roe
+    q_dt_roe
+    q_npta
+    dt_eps
+    cash_ratio
+    adminexp_of_gr
+    netdebt
+    eqt_yoy
+    roe_yoy
+    ocfps
+    eps
+>>> no high correlation left
+>>> saved PCA summary: factor\pca_summary_20251219.csv
+>>> saved PCA loadings: factor\pca_loadings_20251219.csv
+
+>>> PCA explained variance (top components):
+  pc  explained_var_ratio  cum_explained_var_ratio
+ PC1             0.139113                 0.139113
+ PC2             0.095560                 0.234672
+ PC3             0.094265                 0.328937
+ PC4             0.079956                 0.408893
+ PC5             0.059703                 0.468596
+ PC6             0.056851                 0.525447
+ PC7             0.048588                 0.574035
+ PC8             0.042813                 0.616848
+ PC9             0.036482                 0.653329
+PC10             0.036089                 0.689419
+
+>>> PCA top loadings per PC (abs top 10 factors):
+PC1: ebt_yoy(+0.447), op_yoy(+0.444), netprofit_yoy(+0.443), dt_netprofit_yoy(+0.383), roe(+0.273), assets_yoy(+0.161), q_sales_yoy(+0.142), ocf_to_shortdebt(+0.138), revenue_ps(+0.137), op_income(+0.127)
+PC2: revenue_ps(+0.432), op_income(+0.347), working_capital(+0.311), extra_item(+0.309), networking_capital(+0.299), debt_to_assets(+0.264), bps(+0.241), ca_turn(+0.207), assets_to_eqt(+0.196), assets_yoy(+0.171)        
+PC3: debt_to_assets(+0.431), ca_to_assets(-0.400), assets_to_eqt(+0.366), working_capital(-0.300), bps(-0.285), currentdebt_to_debt(-0.277), ca_turn(+0.270), tangasset_to_intdebt(-0.218), roe(-0.209), networking_capital(-0.198)
+PC4: ocf_to_shortdebt(+0.491), q_ocf_to_sales(+0.332), fcff_ps(+0.290), ca_to_assets(-0.286), roe(+0.235), ocf_yoy(+0.212), currentdebt_to_debt(-0.201), cfps(+0.200), debt_to_assets(-0.182), op_income(+0.182)
+PC5: fcff_ps(+0.387), assets_to_eqt(+0.351), q_ocf_to_sales(+0.283), bps(-0.254), ca_turn(-0.254), ca_to_assets(+0.251), working_capital(+0.244), ocf_yoy(+0.241), networking_capital(+0.238), debt_to_assets(+0.229)       
+PC6: currentdebt_to_debt(+0.424), fa_turn(+0.361), ca_turn(+0.316), networking_capital(-0.290), working_capital(-0.280), ca_to_assets(+0.261), assets_yoy(+0.259), cfps(+0.256), revenue_ps(+0.236), extra_item(-0.215)     
+PC7: assets_yoy(+0.538), q_sales_yoy(+0.406), cfps(+0.363), ar_turn(-0.358), ca_turn(-0.288), fa_turn(-0.255), fcff_ps(-0.137), currentdebt_to_debt(-0.137), q_ocf_to_sales(+0.128), bps(+0.122)
+PC8: bps(+0.377), networking_capital(-0.332), working_capital(-0.296), q_ocf_to_sales(+0.273), ar_turn(-0.261), tangasset_to_intdebt(+0.257), assets_to_eqt(+0.256), cfps(-0.244), fcff_ps(-0.234), ocf_yoy(+0.200)
+PC9: ocf_yoy(+0.473), q_op_qoq(-0.430), extra_item(-0.410), op_income(-0.337), networking_capital(+0.240), currentdebt_to_debt(-0.213), fcff_ps(-0.197), tangasset_to_intdebt(-0.190), revenue_ps(+0.155), cfps(-0.133)     
+PC10: q_op_qoq(+0.783), fa_turn(+0.349), ocf_yoy(+0.261), ar_turn(-0.213), q_ocf_to_sales(+0.184), op_income(-0.165), cfps(-0.149), currentdebt_to_debt(-0.117), tangasset_to_intdebt(-0.108), dt_netprofit_yoy(-0.104)     
+PC11: tangasset_to_intdebt(+0.658), ar_turn(+0.455), q_sales_yoy(+0.382), assets_to_eqt(+0.217), roe(-0.179), cfps(-0.164), extra_item(-0.159), q_op_qoq(+0.154), networking_capital(+0.132), ocf_to_shortdebt(+0.106)      
+PC12: ocf_yoy(+0.609), q_ocf_to_sales(-0.475), extra_item(+0.390), tangasset_to_intdebt(+0.232), q_sales_yoy(+0.215), ar_turn(-0.201), fa_turn(-0.146), bps(-0.133), ca_turn(+0.129), ca_to_assets(-0.111)
+PC13: tangasset_to_intdebt(+0.496), fa_turn(+0.401), ar_turn(-0.380), q_sales_yoy(-0.327), currentdebt_to_debt(-0.267), ocf_yoy(-0.247), q_op_qoq(-0.184), op_income(-0.170), cfps(+0.159), ocf_to_shortdebt(+0.141)        
+PC14: q_sales_yoy(+0.486), fa_turn(+0.440), cfps(-0.353), q_op_qoq(-0.302), op_income(+0.257), extra_item(+0.246), revenue_ps(-0.222), q_ocf_to_sales(+0.207), bps(-0.172), networking_capital(-0.170)
+PC15: cfps(+0.426), ar_turn(+0.362), fa_turn(+0.355), roe(-0.352), ca_turn(-0.313), bps(+0.299), networking_capital(-0.215), extra_item(+0.206), debt_to_assets(-0.189), currentdebt_to_debt(-0.156)
+PC16: fcff_ps(+0.412), bps(+0.367), q_ocf_to_sales(-0.329), ocf_to_shortdebt(+0.265), ar_turn(-0.257), extra_item(-0.257), roe(-0.257), assets_yoy(-0.253), q_sales_yoy(+0.218), currentdebt_to_debt(-0.202)
+PC17: assets_yoy(+0.458), q_ocf_to_sales(-0.401), cfps(-0.353), q_sales_yoy(-0.316), currentdebt_to_debt(-0.260), ca_turn(-0.255), assets_to_eqt(+0.191), roe(+0.183), ocf_yoy(+0.173), ar_turn(+0.172)
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC12: ocf_yoy(+0.609), q_ocf_to_sales(-0.475), extra_item(+0.390), tangasset_to_intdebt(+0.232), q_sales_yoy(+0.215), ar_turn(-0.201), fa_turn(-0.146), bps(-0.133), ca_turn(+0.129), ca_to_assets(-0.111)
+PC13: tangasset_to_intdebt(+0.496), fa_turn(+0.401), ar_turn(-0.380), q_sales_yoy(-0.327), currentdebt_to_debt(-0.267), ocf_yoy(-0.247), q_op_qoq(-0.184), op_income(-0.170), cfps(+0.159), ocf_to_shortdebt(+0.141)        
+PC14: q_sales_yoy(+0.486), fa_turn(+0.440), cfps(-0.353), q_op_qoq(-0.302), op_income(+0.257), extra_item(+0.246), revenue_ps(-0.222), q_ocf_to_sales(+0.207), bps(-0.172), networking_capital(-0.170)
+PC15: cfps(+0.426), ar_turn(+0.362), fa_turn(+0.355), roe(-0.352), ca_turn(-0.313), bps(+0.299), networking_capital(-0.215), extra_item(+0.206), debt_to_assets(-0.189), currentdebt_to_debt(-0.156)
+PC16: fcff_ps(+0.412), bps(+0.367), q_ocf_to_sales(-0.329), ocf_to_shortdebt(+0.265), ar_turn(-0.257), extra_item(-0.257), roe(-0.257), assets_yoy(-0.253), q_sales_yoy(+0.218), currentdebt_to_debt(-0.202)
+PC17: assets_yoy(+0.458), q_ocf_to_sales(-0.401), cfps(-0.353), q_sales_yoy(-0.316), currentdebt_to_debt(-0.260), ca_turn(-0.255), assets_to_eqt(+0.191), roe(+0.183), ocf_yoy(+0.173), ar_turn(+0.172)
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+(-0.267), ocf_yoy(-0.247), q_op_qoq(-0.184), op_income(-0.170), cfps(+0.159), ocf_to_shortdebt(+0.141)        
+PC14: q_sales_yoy(+0.486), fa_turn(+0.440), cfps(-0.353), q_op_qoq(-0.302), op_income(+0.257), extra_item(+0.246), revenue_ps(-0.222), q_ocf_to_sales(+0.207), bps(-0.172), networking_capital(-0.170)
+PC15: cfps(+0.426), ar_turn(+0.362), fa_turn(+0.355), roe(-0.352), ca_turn(-0.313), bps(+0.299), networking_capital(-0.215), extra_item(+0.206), debt_to_assets(-0.189), currentdebt_to_debt(-0.156)
+PC16: fcff_ps(+0.412), bps(+0.367), q_ocf_to_sales(-0.329), ocf_to_shortdebt(+0.265), ar_turn(-0.257), extra_item(-0.257), roe(-0.257), assets_yoy(-0.253), q_sales_yoy(+0.218), currentdebt_to_debt(-0.202)
+PC17: assets_yoy(+0.458), q_ocf_to_sales(-0.401), cfps(-0.353), q_sales_yoy(-0.316), currentdebt_to_debt(-0.260), ca_turn(-0.255), assets_to_eqt(+0.191), roe(+0.183), ocf_yoy(+0.173), ar_turn(+0.172)
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC15: cfps(+0.426), ar_turn(+0.362), fa_turn(+0.355), roe(-0.352), ca_turn(-0.313), bps(+0.299), networking_capital(-0.215), extra_item(+0.206), debt_to_assets(-0.189), currentdebt_to_debt(-0.156)
+PC16: fcff_ps(+0.412), bps(+0.367), q_ocf_to_sales(-0.329), ocf_to_shortdebt(+0.265), ar_turn(-0.257), extra_item(-0.257), roe(-0.257), assets_yoy(-0.253), q_sales_yoy(+0.218), currentdebt_to_debt(-0.202)
+PC17: assets_yoy(+0.458), q_ocf_to_sales(-0.401), cfps(-0.353), q_sales_yoy(-0.316), currentdebt_to_debt(-0.260), ca_turn(-0.255), assets_to_eqt(+0.191), roe(+0.183), ocf_yoy(+0.173), ar_turn(+0.172)
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC16: fcff_ps(+0.412), bps(+0.367), q_ocf_to_sales(-0.329), ocf_to_shortdebt(+0.265), ar_turn(-0.257), extra_item(-0.257), roe(-0.257), assets_yoy(-0.253), q_sales_yoy(+0.218), currentdebt_to_debt(-0.202)
+PC17: assets_yoy(+0.458), q_ocf_to_sales(-0.401), cfps(-0.353), q_sales_yoy(-0.316), currentdebt_to_debt(-0.260), ca_turn(-0.255), assets_to_eqt(+0.191), roe(+0.183), ocf_yoy(+0.173), ar_turn(+0.172)
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC17: assets_yoy(+0.458), q_ocf_to_sales(-0.401), cfps(-0.353), q_sales_yoy(-0.316), currentdebt_to_debt(-0.260), ca_turn(-0.255), assets_to_eqt(+0.191), roe(+0.183), ocf_yoy(+0.173), ar_turn(+0.172)
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC18: op_income(+0.594), extra_item(-0.473), ocf_to_shortdebt(-0.410), dt_netprofit_yoy(+0.177), cfps(+0.172), fcff_ps(-0.166), ocf_yoy(+0.157), tangasset_to_intdebt(+0.141), roe(+0.131), ar_turn(-0.122)
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC19: roe(+0.515), assets_yoy(-0.344), currentdebt_to_debt(-0.334), ocf_to_shortdebt(-0.315), dt_netprofit_yoy(-0.314), debt_to_assets(+0.238), fcff_ps(+0.220), op_income(-0.198), ca_turn(-0.180), revenue_ps(+0.149)     
+PC20: dt_netprofit_yoy(+0.643), ocf_to_shortdebt(-0.354), fcff_ps(+0.312), ebt_yoy(-0.267), op_yoy(-0.260), opPC20: dt_netprofit_yoy(+0.643), ocf_to_shortdebt(-0.354), fcff_ps(+0.312), ebt_yoy(-0.267), op_yoy(-0.260), op_income(-0.211), q_ocf_to_sales(+0.193), extra_item(+0.182), currentdebt_to_debt(-0.155), assets_yoy(+0.132)  
+>>> saved PCA scree plot: factor\pca_scree_20251219.png
+>>> saved PCA scores: factor\pca_scores_20251219.csv
+>>> saved remaining factors: factor\remaining_factors_20251219.json (n=27)
+PS E:\Python\project\quants> python .\ae_cluster.py --date 20251219
+>>> X shape (stocks x factors) = (5393, 27)
+>>> saved scaler params: factor/ae_out_20251219\scaler_params.npz
+>>> device: cuda
+epoch    1 | loss 1.024721
+epoch   20 | loss 1.009339
+epoch   40 | loss 0.982465
+epoch   60 | loss 0.957551
+epoch   80 | loss 0.970994
+epoch  100 | loss 0.928729
+epoch  120 | loss 0.904889
+epoch  140 | loss 0.854252
+epoch  160 | loss 0.900806
+epoch  180 | loss 0.923997
+epoch  200 | loss 0.811499
+epoch  220 | loss 0.830484
+epoch  240 | loss 0.777667
+epoch  260 | loss 0.806566
+epoch  280 | loss 0.790520
+epoch  300 | loss 0.757660
+epoch  320 | loss 0.756214
+epoch  340 | loss 0.741638
+epoch  360 | loss 0.770331
+epoch  380 | loss 0.718674
+epoch  400 | loss 0.711896
+epoch  420 | loss 0.701557
+epoch  440 | loss 0.708565
+epoch  460 | loss 0.681537
+epoch  480 | loss 0.680255
+epoch  500 | loss 0.691498
+epoch  520 | loss 0.687126
+epoch  540 | loss 0.663023
+epoch  560 | loss 0.682400
+epoch  580 | loss 0.657113
+epoch  600 | loss 0.639556
+epoch  620 | loss 0.644754
+epoch  640 | loss 0.635010
+epoch  660 | loss 0.653886
+epoch  680 | loss 0.624184
+epoch  700 | loss 0.665387
+epoch  720 | loss 0.647240
+epoch  740 | loss 0.620856
+epoch  760 | loss 0.638143
+epoch  780 | loss 0.617549
+epoch  800 | loss 0.639477
+epoch  820 | loss 0.691361
+epoch  840 | loss 0.606480
+epoch  860 | loss 0.613589
+epoch  880 | loss 0.597351
+epoch  900 | loss 0.602971
+epoch  920 | loss 0.591319
+epoch  940 | loss 0.599622
+epoch  960 | loss 0.612025
+epoch  980 | loss 0.575045
+epoch 1000 | loss 0.576386
+epoch 1020 | loss 0.566791
+epoch 1040 | loss 0.575709
+epoch 1060 | loss 0.581966
+epoch 1080 | loss 0.564931
+epoch 1100 | loss 0.556607
+epoch 1120 | loss 0.560815
+epoch 1140 | loss 0.563895
+epoch 1160 | loss 0.603992
+epoch 1180 | loss 0.573513
+epoch 1200 | loss 0.552324
+epoch 1220 | loss 0.546649
+epoch 1240 | loss 0.540759
+epoch 1260 | loss 0.559500
+epoch 1280 | loss 0.561130
+epoch 1300 | loss 0.550044
+epoch 1320 | loss 0.539876
+epoch 1340 | loss 0.548607
+epoch 1360 | loss 0.526401
+epoch 1380 | loss 0.530229
+epoch 1400 | loss 0.551391
+epoch 1420 | loss 0.516388
+epoch 1440 | loss 0.528507
+epoch 1460 | loss 0.530977
+epoch 1480 | loss 0.518094
+epoch 1500 | loss 0.540063
+epoch 1520 | loss 0.506781
+epoch 1540 | loss 0.530297
+epoch 1560 | loss 0.531188
+epoch 1580 | loss 0.515115
+epoch 1600 | loss 0.510263
+epoch 1620 | loss 0.500317
+epoch 1640 | loss 0.510908
+epoch 1660 | loss 0.496822
+epoch 1680 | loss 0.519583
+epoch 1700 | loss 0.488759
+epoch 1720 | loss 0.498254
+epoch 1740 | loss 0.487888
+epoch 1760 | loss 0.485375
+epoch 1780 | loss 0.486912
+epoch 1800 | loss 0.508541
+epoch 1820 | loss 0.490608
+epoch 1840 | loss 0.495542
+epoch 1860 | loss 0.508633
+epoch 1880 | loss 0.498765
+epoch 1900 | loss 0.505834
+epoch 1920 | loss 0.512712
+epoch 1940 | loss 0.498570
+epoch 1960 | loss 0.484092
+epoch 1980 | loss 0.481497
+epoch 2000 | loss 0.504328
+>>> saved AE model: factor/ae_out_20251219\ae_model.pt
+>>> saved plot: factor/ae_out_20251219\latent_cluster_AE.png
+>>> saved plot: factor/ae_out_20251219\latent_recon_error_AE.png
+>>> saved plot: factor/ae_out_20251219\latent_daily_basic_close.png
+>>> Saved PCA artifacts found and factor order matches. Reusing for benchmark.
+[warn] No overlapping stocks between current data and saved PCA scores. Recompute PCA.
+>>> saved plot: factor/ae_out_20251219\latent_cluster_PCAk8.png
+>>> saved plot: factor/ae_out_20251219\latent_recon_error_PCAk8.png
+>>> saved benchmark table: factor/ae_out_20251219\benchmark_ae_vs_pca.csv
+
+>>> Benchmark summary:
+     recon_mse_mean  recon_mse_p90  silhouette  calinski_harabasz  davies_bouldin
+AE         0.481346       0.316964    0.404287        3412.680508        0.805095
+PCA        0.573186       0.269668    0.197131         601.839892        1.247439
+>>> saved benchmark plot: factor/ae_out_20251219\benchmark_ae_vs_pca.png
+
+>>> DONE.
+>>> outputs saved in: factor/ae_out_20251219
+PS E:\Python\project\quants> python .\ae_extra_analysis.py --date 20251219
+>>> out_dir      = factor/ae_out_20251219
+>>> latent_path  = factor/ae_out_20251219\ae_latent.csv
+>>> clusters_path= factor/ae_out_20251219\clusters_AE_kmeans_k8.csv
+>>> pick_dir     = factor/ae_out_20251219\extra_pick_simple
+>>> saved: factor/ae_out_20251219\extra_pick_simple\picks_cluster_representatives_n10.csv | rows=62
+>>> saved: factor/ae_out_20251219\extra_pick_simple\picks_latent_extremes_n10.csv | rows=160
+>>> saved: factor/ae_out_20251219\extra_pick_simple\picks_all.csv | rows=222 | unique_stocks=118
+>>> saved: factor/ae_out_20251219\extra_pick_simple\plot_latent2_highlight_all.png
+>>> DONE.
