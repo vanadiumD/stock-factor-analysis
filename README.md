@@ -30,7 +30,7 @@
 │   └── purified.h5               # 预处理后的因子数据（自动生成）
 ├── ae_cluster.py             # AutoEncoder 训练 + 聚类分析
 ├── ae_extra_analysis.py      # 基于潜在空间的股票筛选
-├── run.bash                      # 服务器端一键运行示例
+├── run.sh                      # 服务器端一键运行示例
 ├── requirements.txt              # Python 依赖
 ├── .env                          # Tushare API Key（需自行配置）
 └── README.md
@@ -79,7 +79,7 @@ python .\factor\fetch_a_tushare.py
 ### 2. 服务器运行（示例）
 
 ```bash
-bash run.bash
+bash run.sh
 ```
 
 或后台运行：
@@ -444,6 +444,7 @@ factor/ae_out_20251219/extra_pick_simple/
 ---
 
 **再次强调：本项目不构成任何投资建议。**
+
 
 
 
