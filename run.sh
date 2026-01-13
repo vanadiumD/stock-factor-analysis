@@ -1,0 +1,1 @@
+nohup /root/miniconda3/envs/env/bin/python -u factor/fetch_a_tushare.py > fetch.log 2>&1 &
