@@ -415,8 +415,10 @@ factor/ae_out_20251219/extra_pick_simple/
 ├── picks_all.csv
 └── plot_latent2_highlight_all.png
 ```
+<p align="center">
+  <img src="factor\ae_out_20251219\extra_pick_simple\plot_latent2_highlight_all.png" width="750">
+</p>
 
-![](factor\ae_out_20251219\extra_pick_simple\plot_latent2_highlight_all.png)
 ---
 
 ## 八、整体分析报告与主要发现（示例）
@@ -454,6 +456,7 @@ factor/ae_out_20251219/extra_pick_simple/
 ---
 
 **再次强调：本项目不构成任何投资建议。**
+
 
 
 
