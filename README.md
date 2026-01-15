@@ -148,7 +148,8 @@ valid<=0.2         # 删除有效率 ≤ 20% 的因子
 ```
 
 
-![因子直方图示例](factor\factor_histograms_20251219_p1.png)
+![](factor\factor_histograms_20251219_p1.png)
+
 ---
 ### 4. 相关性剪枝（Connected Components）
 
@@ -170,8 +171,10 @@ cc=all    # 对所有连通分量执行剪枝
 - valid_ratio 高
 - zero_all_ratio 低
 - unique_count 高
+  
 ![](factor\correlation.png)
 删去相关性连通图其他成分后的结果
+
 ---
 
 ### 5. 预分析输出结果
@@ -296,7 +299,7 @@ factor/ae_out_20251219/
 
 **阅读要点：**
 - 若不同颜色大量交叠，意味着 PCA 表示下聚类边界并不清晰
-- 这类结果对应指标上常见：Silhouette 偏低、DB 偏高（你的表里就是这样）
+- 这类结果对应指标上常见：Silhouette 偏低、DB 偏高
 
 ---
 
@@ -444,6 +447,7 @@ factor/ae_out_20251219/extra_pick_simple/
 ---
 
 **再次强调：本项目不构成任何投资建议。**
+
 
 
 
