@@ -147,8 +147,9 @@ valid<=0.2         # 删除有效率 ≤ 20% 的因子
 3, roe, pb         # 按序号或名称手动删除
 ```
 
-
-![](factor\factor_histograms_20251219_p1.png)
+<p align="center">
+  <img src="factor\factor_histograms_20251219_p1.png" width="750">
+</p>
 
 ---
 ### 4. 相关性剪枝（Connected Components）
@@ -171,8 +172,11 @@ cc=all    # 对所有连通分量执行剪枝
 - valid_ratio 高
 - zero_all_ratio 低
 - unique_count 高
-  
-![](factor\correlation.png)
+
+<p align="center">
+  <img src="factor\correlation.png" width="750">
+</p>
+
 删去相关性连通图其他成分后的结果
 
 ---
@@ -218,7 +222,10 @@ factor/pca_scree_20251219.png
 
 因此在后续 AutoEncoder 训练中，将潜在维度设置为 **8**，作为在信息保留与模型复杂度之间的折中选择。
 
-![](factor/pca_scree_20251219.png)
+<p align="center">
+  <img src="factor/pca_scree_20251219.png" width="750">
+</p>
+
 
 > **此处 PCA 的累计解释方差可作为后续 Encoder 维度选择的重要参考**
 
@@ -447,6 +454,7 @@ factor/ae_out_20251219/extra_pick_simple/
 ---
 
 **再次强调：本项目不构成任何投资建议。**
+
 
 
 
